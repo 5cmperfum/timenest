@@ -1,0 +1,291 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    background: #FFFDF5; 
+    color: #1a1a1a;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo {
+    font-family: 'Kaushan Script', cursive!important;
+    font-size: 4.0em;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+}
+
+.navbar {
+    padding: 15px 20px;
+    background: #FFFDF5;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+.navbar nav { margin-top: 10px; }
+.navbar nav a { 
+    margin: 0 10px; 
+    text-decoration: none; 
+    color: #1a1a1a; 
+    font-weight: 500;
+    display: inline-block;
+}
+.navbar nav a:hover { color: #555; }
+
+.banner {
+    height: 550px;
+    background-image: url('./images/5ml.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.45);
+}
+.banner-texto {
+    position: relative; 
+    z-index: 2;
+    padding: 20px;
+    max-width: 800px;
+}
+.banner-texto h2 { font-size: 3.5em; line-height: 1.2; color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
+.banner-texto p { margin: 15px 0 25px 0; font-size: 1.2em; color: white; text-shadow: 1px 1px 4px rgba(0,0,0,0.7); }
+
+.btn { 
+    padding: 14px 30px; 
+    border-radius: 25px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    background: #F5F1E8;
+    color: #1a1a1a;
+    display: inline-block;
+    transition: 0.3s;
+    border: 1px solid #E5DFD1;
+}
+.btn:hover { 
+    background: #E5DFD1;
+    transform: scale(1.05); 
+}
+
+.categorias { padding: 60px 20px; background: #FFFDF5; }
+.categorias h3 { font-size: 2em; margin-bottom: 30px; text-align: center; }
+.grid-categorias {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.categoria { text-align: center; }
+.categoria a { text-decoration: none; color: #1a1a1a; }
+.categoria h4 { 
+    margin-bottom: 15px;
+    font-size: 1.5em; 
+    letter-spacing: 1px;
+}
+.categoria img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    background: #eee;
+    transition: 0.3s;
+}
+.categoria img:hover { transform: scale(1.05); }
+
+footer { text-align: center; padding: 30px; background: #eee; font-size: 0.9em; }
+
+/* ===== CATALOGO MUJER - FOTO CHICA 220px ===== */
+.catalogo {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+.catalogo h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+.subtitulo {
+    margin-bottom: 40px;
+    color: #666;
+}
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+.producto {
+    background: #FFFDF5;
+    border-radius: 15px;
+    padding: 15px;
+    transition: 0.3s;
+}
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.producto img {
+    width: 100%;
+    height: 220px; /* <-- AQUI SE ACHICO. ANTES ERA 300px */
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #eee;
+    margin-bottom: 15px;
+}
+.producto h3 {
+    font-family: 'Playfair Display', serif;
+    color: #000;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.producto .precio {
+    color: #000;
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+.btn-comprar {
+    display: block;
+    background: #F5F1E8;
+    color: #000;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: 0.3s;
+}
+.btn-comprar:hover {
+    background: #E5DFD1;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+   .banner { height: 400px; background-position: center 40%; }
+   .banner-texto h2 { font-size: 2.5em; }
+}
+@media (min-width: 769px) {
+   .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 60px;
+    }
+   .navbar nav { margin-top: 0; }
+   .grid-categorias { grid-template-columns: repeat(2, 1fr); }
+   .grid-productos { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 768px) {
+   .banner { height: 350px; background-position: center 30%; }
+   .banner-texto h2 { font-size: 2em; }
+   .banner-texto p { font-size: 1em; }
+}
+
+/* ===== SECCIÓN CONTACTO ===== */
+.contacto {
+    padding: 60px 20px;
+    background: #F5F1E8;
+    text-align: center;
+}
+.contacto h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+.contacto .subtitulo {
+    margin-bottom: 40px;
+    color: #666;
+}
+.grid-contacto {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.contacto-item {
+    background: #FFFDF5;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.contacto-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #000;
+}
+.contacto-item p {
+    margin: 5px 0;
+    color: #555;
+}
+.contacto-item .btn {
+    margin-top: 15px;
+    display: inline-block;
+}
+
+@media (min-width: 769px) {
+   .grid-contacto { grid-template-columns: repeat(3, 1fr); }
+}
+/* ===== SECCIÓN PRODUCTOS ===== */
+.productos {
+    padding: 60px 20px;
+    text-align: center; /* Centra el título */
+}
+.productos h2 {
+    font-size: 2.5em;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+.productos .subtitulo {
+    margin-bottom: 40px;
+    color: #666;
+    font-size: 1em;
+}
+
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Se adapta y centra */
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto; /* ESTO LO CENTRA */
+    justify-items: center; /* Centra cada tarjeta */
+}
+
+.producto {
+    background: #FFFDF5;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    max-width: 280px; /* Mismo ancho que mujer */
+}
+.producto img {
+    width: 100%;
+    height: 280px; /* Mismo alto que mujer */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.producto h3 {
+    font-size: 1.2em;
+    margin: 10px 0 5px 0;
+}
+.producto .precio {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
